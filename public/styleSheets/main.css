@@ -1,0 +1,71 @@
+/* body{
+	background:orange;
+} */
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.delete-form {
+  display: inline;
+}
+
+#moviePh img {
+  margin: 3% 50% 1% 30%;
+  height: 40%;
+  width: 40%;
+  border-radius: 2%;
+}
+
+#moviePh .card-title {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  text-align: center;
+  font-weight: 300;
+}
+
+#moviePh #title {
+  padding-top: 0%;
+  text-align: center;
+  font-weight: 900;
+}
+#moviePh {
+  margin-left: 15%;
+
+  width: 100%;
+  border: 10px white;
+}
+
+#moviePh .card-body {
+  text-align: center;
+  font-size: large;
+  margin: 3% 8% 0% 8%;
+}
+
+.card-footer {
+  margin: 10%;
+  border: 0;
+  margin-top: 3%;
+  
+}
+
+.card-footer {
+    font-size: 23px;
+    padding-left: 6%;
+    padding-bottom: 10%;
+}
+
+.trademark {
+  text-align: center;
+  background-color: #e9ecef;
+  padding: 3%;
+  margin-top: 5%;
+  color: black;
+  font-weight: 300;
+  font-size: larger;
+  letter-spacing: 3px;
+  margin-bottom: 0;
+}

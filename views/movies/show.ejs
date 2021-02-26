@@ -1,0 +1,43 @@
+<% include ../partials/header %>
+<!-- <%=currentUser%> -->
+<div class="container" id= "con">
+	<div class="row mt-5">
+		<div class="col-md-9">
+			<div class="card" id="moviePh">
+				<h1 class="card-title" id="title" ><%=movie.title%></h1>
+				<h4 class="card-title"> Critic Rating: <%=movie.rating%> ⭐</h4>
+				<h4 class="card-title"> Audience Rating: <%=criticRating%> ⭐</h4>
+				<img src="<%=movie.url%>" class="card-img-top">
+				<div class="card-body">
+					<p class="card-text"> <%=movie.description%></p>
+					<h6 class="card-text"> Critic: <%=movie.author.username%></h6>
+					<%if(currentUser && movie.author.id.equals(currentUser._id)){%>
+					<a href="/movies/<%=movie._id%>/edit" class="btn btn-primary">Edit</a>
+					<form class="delete-form" action="/movies/<%=movie._id%>?_method=delete" method="POST">
+						<button class="btn btn-danger">Delete</button>
+					</form>
+					<%}%>	
+				</div>
+				<div class="card-footer text-muted">
+					<a href="<%=movie._id%>/comments/new"class="btn btn-outline-secondary text-right">Give your Review</a>
+					<hr>
+					<%movie.comments.forEach((comment)=>{%>
+					<strong><%=comment.author.username%>:</strong>&nbsp;<%=comment.text%><br>
+					<strong> Rating:</strong>&nbsp;<%=comment.rat%> <br> <br>
+
+					<%if(currentUser && comment.author.id.equals(currentUser._id)){%>
+					<a class="btn btn-xs btn-warning"
+						href="/movies/<%=movie._id%>/comments/<%=comment._id%>/edit">Edit</a>
+					<form class="delete-form" action="/movies/<%=movie._id%>/comments/<%=comment._id%>?_method=DELETE"
+						method="Post">
+						<button class="btn btn-xs btn-danger ">Delete</button>
+					</form>
+					<%}%>	<hr>
+					<%})%>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% include ../partials/footer %>

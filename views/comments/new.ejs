@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+<h1 class=" d-flex justify-content-center">
+	Adding Review for
+	<h2 class=" d-flex justify-content-center"><%=movie.title%></h2>
+</h1>
+<div class=row> 
+	<form action="/movies/<%=movie._id%>/comments" class="mx-auto" method="POST">
+		<div class="form-group">
+			<input class="form-control " type="text" name="com[text]" placeholder="your review" required>
+			<input class="form-control " type="number" name="com[rat]" placeholder="rate out of 5" required>
+		</div>
+		<div class="form-group">
+			<input class="btn  form-control btn-primary" type="submit">
+			<a href="/movies">Go Back </a>
+		</div>
+	</form>
+</div>
+<% include ../partials/footer %>

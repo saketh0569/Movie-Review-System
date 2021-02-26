@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+<div class="container">	
+<header class="jumbotron mt-5"> 
+	<div class="container">	
+		<h1 class="display-4">Movie Review System</h1>
+  		<p class="lead">You can find and give reviews for all your favorite Movies....</p>
+		  <% if(currentUser && currentUser.role == 'critic'){ %>
+			<a class="btn btn-primary btn-lg" href="/movies/new" role="button">Add new Movie</a>
+			<%}%>
+	</div>
+</header>
+
+<div class="row" style="display:flex; flex-wrap: wrap;">
+	<% list.forEach((movies)=>{ %>
+	<div class="col-md-3 col-sm-12 mx-1"> 
+		<div class="card mx-auto" >
+			<img src="<%=movies.url%>" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h2><%= movies.title %></h2>
+				<h5> Reviewer Rating:<%= movies.rating %>⭐</h5>
+			</div>
+			<a href="movies/<%=movies._id%>" class="btn btn-warning">More Info</a>
+		</div>
+	</div>
+	<%})%>
+</div>
+<% include ../partials/footer %>
