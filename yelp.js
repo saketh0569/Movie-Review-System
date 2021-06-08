@@ -11,14 +11,25 @@ const express = require('express'),
 	flash = require('connect-flash'),
 	logger = require('morgan')
 Comment = require("./models/comment.js");
+require('dotenv').config();
+
+// console.log(process.env)
 
 const commentRoutes = require("./routes/comments"),
 	moviesRoutes = require("./routes/movies"),
 	indexRoutes = require("./routes/index");
 
-const DB_URL = process.env.DB_URL || "mongodb+srv://saketh:saketh@cluster0.np0za.mongodb.net/movieReviews?retryWrites=true&w=majority";
-const PORT = process.env.PORT || 80;
-const IP = process.env.IP || "127.0.0.1"
+
+// TO USE VALUES WITHOUT CREATING ENVIRONMENT VARIABLE
+// const DB_URL = process.env.DB_URL || "mongodb+srv://saketh:saketh@cluster0.np0za.mongodb.net/movieReviews?retryWrites=true&w=majority";
+// const PORT = process.env.PORT || 80;
+// const IP = process.env.IP || "127.0.0.1";
+
+
+// accessing the values stored in '.env' file
+const DB_URL = process.env.DB_URL;
+const PORT = process.env.PORT;
+const IP = process.env.IP;
 
 apk.set("view engine", "ejs");
 apk.use(bodyParser.urlencoded({ extended: true }));

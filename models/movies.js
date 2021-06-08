@@ -1,19 +1,19 @@
 var mongoose = require('mongoose');
 var MovieSchema = mongoose.Schema({
-	title:String,
-	url:String,
-	description:String,
-	rating:{
+	title: String,
+	url: String,
+	description: String,
+	rating: {
 		type: Number,
 		min: 0,
 		max: 5
 	},
-	author:{
-		id:{
-			type:mongoose.Schema.Types.ObjectId,
-			ref:"User"
+	author: {
+		id: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "User"
 		},
-		username:String
+		username: String
 	},
 	comments: [
 		{
@@ -23,4 +23,4 @@ var MovieSchema = mongoose.Schema({
 	]
 });
 
-module.exports = mongoose.model("Movie",MovieSchema);
+module.exports = mongoose.model("Movie", MovieSchema);
