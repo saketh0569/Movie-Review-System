@@ -31,6 +31,8 @@ const DB_URL = process.env.DB_URL;
 const PORT = process.env.PORT;
 const IP = process.env.IP;
 
+
+
 apk.set("view engine", "ejs");
 apk.use(bodyParser.urlencoded({ extended: true }));
 apk.use(express.static(__dirname + "/public"));
